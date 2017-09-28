@@ -1,0 +1,4 @@
+﻿
+
+
+01..3 | % {    New-VM -ComputerName localhost -Generation 01 -MemoryStartupBytes 2GB -Name NANO-HC-0$_ -VHDPath C:\vm\nano-hc-0$_\nano-hc-0$_.vhd -Path c:\VM -SwitchName 'vSwitch Private'}01..3 | % {Set-VMProcessor -VMName nano-hc-0$_ -ExposeVirtualizationExtensions $trueSet-VMMemory -VMName nano-hc-0$_ -DynamicMemoryEnabled $falseGet-VMNetworkAdapter -VMName nano-hc-0$_ | Set-VMNetworkAdapter -MacAddressSpoofing On}    1..6 | % {      New-VHD -Path "C:\vm\Nano-HC-03\$_.vhdx" -Dynamic -SizeBytes 33GB  }  1..6 | % {    Add-VMHardDiskDrive –ControllerType SCSI -VMName nano-hc-03 -Path C:\vm\Nano-HC-03\$_.vhdx  }

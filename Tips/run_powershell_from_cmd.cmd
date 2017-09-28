@@ -1,0 +1,1 @@
+Powershell -command "& {Get-Process}"
