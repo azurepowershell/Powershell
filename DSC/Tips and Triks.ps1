@@ -14,3 +14,6 @@
         [ValueData = [string[]]]
         [ValueType = [string]{ Binary | Dword | ExpandString | MultiString | Qword | String }]
     }
+
+
+# DSC runs under SYSTEM
