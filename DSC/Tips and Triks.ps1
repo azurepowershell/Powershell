@@ -1,3 +1,5 @@
+Break
+
 #Get the Syntax for a resource
 
     Get-DscResource registry -Syntax
@@ -16,4 +18,9 @@
     }
 
 
-# DSC runs under SYSTEM
+
+# Remember to install Module if it is not a build in module and import it
+    Configuration ResourceTest {
+        Import-DscResource -ModuleName xPSDesireStateConfiguration, xSMBShare
+
+    (...)
